@@ -4,7 +4,7 @@ on:
   pull_request:
     paths:
       - .github/workflows/packaging-mac-brew.yml
-      - extras/httpie.rb
+      - downstream/mac/brew/httpie.rb
 
 jobs:
   brew:

@@ -126,7 +126,7 @@ pycodestyle: codestyle
 codestyle:
 	@echo $(H1)Running flake8$(H1END)
 	@[ -f $(VENV_BIN)/flake8 ] || $(VENV_PIP) install --upgrade --editable '.[dev]'
-	$(VENV_BIN)/flake8 httpie/ tests/ extras/ *.py
+	$(VENV_BIN)/flake8 httpie/ tests/ downstream/mac/brew/ *.py
 	@echo
 
 
@@ -140,7 +140,7 @@ codecov-upload:
 
 doc-check:
 	@echo $(H1)Running documentations checks$(H1END)
-	mdl --verbose --git-recurse --style docs/linter/mdl-styles.rb .
+	mdl --git-recurse --style docs/linter/mdl-styles.rb .
 
 
 ###############################################################################
@@ -187,14 +187,14 @@ uninstall-httpie:
 ###############################################################################
 
 brew-deps:
-	extras/brew-deps.py
+	downstream/mac/brew/brew-deps.py
 
 brew-test:
 	@echo $(H1)Uninstalling httpie$(H1END)
 	- brew uninstall httpie
 
 	@echo $(H1)Building from source…$(H1END)
-	- brew install --build-from-source ./extras/httpie.rb
+	- brew install --build-from-source ./downstream/mac/brew/httpie.rb
 
 	@echo $(H1)Verifying…$(H1END)
 	brew test httpie

@@ -89,7 +89,7 @@ $ emerge httpie
 
 ```bash
 # Arch Linux
-$ pacman -S httpie
+$ pacman -Sy httpie
 ```
 
 ```bash
@@ -104,7 +104,7 @@ $ eopkg install httpie
 
 ### Windows, universal
 
-A universal installation method (that works on Linux, macOS and Windows, and always provides the latest version) is to use [pip](https://pypi.org/project/pip/):
+A universal installation method (that works on Linux, macOS and Windows, and always provides the latest version) is to use [pip](https://pypi.org/project/httpie/):
 
 ```bash
 # Make sure we have an up-to-date version of pip and setuptools:
@@ -116,7 +116,7 @@ $ python -m pip install --upgrade httpie
 (If `pip` installation fails for some reason, you can try
 `easy_install httpie` as a fallback.)
 
-Windows users can also install HTTPie with [Chocolatey](https://chocolatey.org):
+Windows users can also install HTTPie with [Chocolatey](https://community.chocolatey.org/packages/httpie/):
 
 ```bash
 $ choco upgrade httpie
